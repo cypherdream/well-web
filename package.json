@@ -1,18 +1,18 @@
 {
-  "name": "school-manager-web",
-  "private": true,
+  "name": "weather-dashboard",
   "version": "1.0.0",
-  "type": "module",
+  "description": "A modern weather dashboard that fetches data from a public weather API",
+  "main": "index.html",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build"
+    "build": "echo 'Weather Dashboard ready for deployment'",
+    "start": "python -m http.server 8000"
   },
-  "dependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
-  },
-  "devDependencies": {
-    "@vitejs/plugin-react": "^4.3.1",
-    "vite": "^5.3.1"
-  }
+  "keywords": [
+    "weather",
+    "dashboard",
+    "api",
+    "weather-app"
+  ],
+  "author": "cypherdream",
+  "license": "MIT"
 }

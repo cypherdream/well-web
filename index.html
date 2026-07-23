@@ -1,2 +1,102 @@
-<!doctype html>
-<html><head><meta charset="UTF-8" /><title>School Manager</title></head><body><div id="root"></div><script type="module" src="/src/main.jsx"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌤️ Weather Dashboard</h1>
+            <p class="subtitle">Get real-time weather information</p>
+        </header>
+
+        <div class="search-section">
+            <div class="search-box">
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    placeholder="Enter city name..."
+                    autocomplete="off"
+                >
+                <button id="searchBtn">Search</button>
+            </div>
+            <button id="currentLocationBtn" class="location-btn">📍 Use Current Location</button>
+            <div id="errorMessage" class="error-message"></div>
+        </div>
+
+        <div id="loadingSpinner" class="loading-spinner hidden">Loading...</div>
+
+        <div id="weatherContent">
+            <!-- Current Weather -->
+            <div id="currentWeather" class="weather-section hidden">
+                <div class="current-weather">
+                    <div class="weather-header">
+                        <div>
+                            <h2 id="cityName"></h2>
+                            <p id="weatherDate"></p>
+                            <p id="weatherDesc" class="weather-description"></p>
+                        </div>
+                        <div class="weather-icon-large">
+                            <img id="weatherIcon" src="" alt="Weather icon">
+                        </div>
+                    </div>
+
+                    <div class="temperature-section">
+                        <div class="main-temp">
+                            <span id="temperature"></span>
+                            <span class="unit">°C</span>
+                        </div>
+                        <div class="feels-like">
+                            <p>Feels like <span id="feelsLike"></span>°C</p>
+                        </div>
+                    </div>
+
+                    <div class="weather-details">
+                        <div class="detail-card">
+                            <span class="detail-label">Humidity</span>
+                            <span class="detail-value" id="humidity"></span>
+                        </div>
+                        <div class="detail-card">
+                            <span class="detail-label">Wind Speed</span>
+                            <span class="detail-value" id="windSpeed"></span>
+                        </div>
+                        <div class="detail-card">
+                            <span class="detail-label">Pressure</span>
+                            <span class="detail-value" id="pressure"></span>
+                        </div>
+                        <div class="detail-card">
+                            <span class="detail-label">Visibility</span>
+                            <span class="detail-value" id="visibility"></span>
+                        </div>
+                        <div class="detail-card">
+                            <span class="detail-label">UV Index</span>
+                            <span class="detail-value" id="uvIndex"></span>
+                        </div>
+                        <div class="detail-card">
+                            <span class="detail-label">Sunrise</span>
+                            <span class="detail-value" id="sunrise"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Forecast -->
+            <div id="forecastSection" class="weather-section hidden">
+                <h3>5-Day Forecast</h3>
+                <div id="forecastContainer" class="forecast-container"></div>
+            </div>
+
+            <!-- Recent Searches -->
+            <div id="recentSearches" class="weather-section hidden">
+                <h3>Recent Searches</h3>
+                <div id="recentSearchesContainer" class="recent-searches-container"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
